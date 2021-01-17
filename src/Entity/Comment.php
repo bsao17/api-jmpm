@@ -10,8 +10,6 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=CommentRepository::class)
  * @ApiResource (
- *     collectionOperations={"get"},
- *     itemOperations={"get"},
  *     normalizationContext={
             "groups"={"comment-read"}
  *     }
