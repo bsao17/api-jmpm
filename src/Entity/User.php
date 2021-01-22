@@ -50,6 +50,7 @@ class User implements UserInterface
 
     /**
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="user", orphanRemoval=true)
+     * @ORM\JoinColumn(nullable=true)
      * @Groups ({"user_read"})
      */
     private $comments;
