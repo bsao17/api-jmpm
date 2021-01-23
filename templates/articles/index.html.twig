@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+    {% for billet in billets %}
+        <div class="row">
+            <div class="col-md-2">&ensp;</div>
+            <div class="col-md-8 my-5">
+                <div class="card">
+                    <p class="card-header">{{billet.title}} (Ecrit le {{billet.date | format_date(locale='fr') }}) </p>
+                    <pre class="card-body my-5 p-3">{{billet.content}}</pre>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    {% endfor %}
+{% endblock %}
