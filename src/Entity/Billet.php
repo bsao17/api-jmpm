@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiSubresource;
 use App\Repository\BilletRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -58,6 +59,7 @@ class Billet
 
     /**
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="billet", orphanRemoval=true)
+     * @ApiSubresource()
      */
     private $comments;
 

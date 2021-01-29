@@ -21,7 +21,7 @@ class User extends Fixture
             $user->setUsername('bsao17')
                 ->setPassword('123456')
                 ->setEmail('declic62@gmail.com')
-                ->setRoles('ROLE_ADMIN');
+                ->setRoles((array)'ROLE_ADMIN');
             $encoded = $this->encoder->encodePassword($user ,$user->getPassword());
             $user->setPassword($encoded);
             $manager->persist($user);
