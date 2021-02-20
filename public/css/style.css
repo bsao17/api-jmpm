@@ -1,3 +1,6 @@
 body, html{
     background-color: #288690;
 }
+#loginButton:hover{
+    border: outset white 5px;
+}
