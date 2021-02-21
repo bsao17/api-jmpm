@@ -10,7 +10,7 @@
             <div class="col-md-2">&ensp;</div>
             <div class="col-md-8 my-5">
                 <div class="card">
-                    <p class="card-header">{{billet.title}} (Ecrit le {{billet.date | format_date(locale='fr') }}) </p>
+                    <p class="card-header">{{billet.title}} (Ecrit le {{billet.date }}) </p>
                     <pre class="card-body my-5 p-3">{{billet.content}}</pre>
                     <a href="{{ path('admin_controller') }}" class="btn btn-sm btn-danger">Return</a>
                 </div>
