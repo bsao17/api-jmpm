@@ -7,14 +7,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ArticlesController extends AbstractController
+class UpdateController extends AbstractController
 {
     /**
-     * @Route("/articles", name="articles")
+     * @Route("/update", name="admin_update")
      */
     public function index(BilletRepository $repositoryBillet): Response
     {
-        return $this->render('articles/index.html.twig', [
+        return $this->render('create/create.html.twig', [
             'billets' => $repositoryBillet->findAll(),
         ]);
     }

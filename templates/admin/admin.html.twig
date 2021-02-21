@@ -3,22 +3,55 @@
 {% block title %}Junior-mais-pas-manchot{% endblock %}
 
 {% block body %}
-    <div class="card my-5 container" id="container">
-        <h2 class="text-center card-header m-0">
-            Bienvenue sur l'API du site communautaire Junior mais pas manchot !!!<br>
-        </h2>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4 d-flex justify-content-center">
-                    <img src="https://res.cloudinary.com/bsao17/image/upload/v1610179982/samples/JMPM/dev-junior_an6cc1.png" alt="logo JMPM">
+    <div class="row my-3 mx-2">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>create</h3>
                 </div>
-                <div class="col-md-4"></div>
+                <div class="card-body">
+                    <img src="{{ asset('pictures/dashboard/create.jpg') }}" class="w-50" alt="">
+                    <div class="card-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, vero.</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="" class="btn btn-success">Enter</a>
+                </div>
             </div>
         </div>
-        <div class="card-footer text-center">
-            <a href="https://127.0.0.1:8000/articles" class="btn btn-secondary shadow-lg">API-GET</a>
-            <a href="https://127.0.0.1:8000/api" class="btn btn-secondary shadow-lg">API-Platform</a>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Update</h3>
+                </div>
+                <div class="card-body">
+                    <img src="{{ asset('pictures/dashboard/update.jpg') }}" class="w-50" alt="">
+                    <div class="card-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, dolorum!</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="{{ path('admin_update') }}" class="btn btn-success">Enter</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Delete</h3>
+                </div>
+                <div class="card-body">
+                    <img src="pictures/dashboard/delete.webp" class="w-50" alt="">
+                    <div class="card-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, dolorum!</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="" class="btn btn-success">Enter</a>
+                </div>
+            </div>
         </div>
     </div>
+
 {% endblock %}
