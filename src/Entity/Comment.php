@@ -11,7 +11,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  * @ORM\Entity(repositoryClass=CommentRepository::class)
  * @ApiResource (
  *     normalizationContext={
-            "groups"={"comment-create"}
+            "groups"={"comment-update"}
  *     }
  * )
  */
@@ -21,7 +21,7 @@ class Comment
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups ({"comment-create"})
+     * @Groups ({"comment-update"})
      */
     private $id;
 
@@ -33,20 +33,20 @@ class Comment
 
     /**
      * @ORM\Column(type="date")
-     * @Groups ({"comment-create"})
+     * @Groups ({"comment-update"})
      */
     private $date;
 
     /**
      * @ORM\ManyToOne(targetEntity=Billet::class, inversedBy="comments")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups ({"comment-create"})
+     * @Groups ({"comment-update"})
      */
     private $billet;
 
     /**
      * @ORM\Column(type="text")
-     * @Groups ({"comment-create"})
+     * @Groups ({"comment-update"})
      */
     private $content;
 

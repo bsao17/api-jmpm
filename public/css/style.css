@@ -1,9 +1,3 @@
 body, html{
     background-color: #288690;
 }
-#loginButton:hover{
-    border: outset white 3px;
-}
-#inscription:hover{
-    border: outset #FF0000 3px;
-}

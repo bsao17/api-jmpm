@@ -14,7 +14,7 @@ class UpdateController extends AbstractController
      */
     public function index(BilletRepository $repositoryBillet): Response
     {
-        return $this->render('create/create.html.twig', [
+        return $this->render('update/update.html.twig', [
             'billets' => $repositoryBillet->findAll(),
         ]);
     }
