@@ -3,19 +3,27 @@
 {% block title %}Hello IsUpToDateController!{% endblock %}
 
 {% block body %}
-    <h1>Welcome in update page</h1>
+    <div class="container">
+        <h2 class="text-center card-header border border-secondary border-3 text-black-50 bg-info rounded">Read & Update</h2>
+        <div class="card p-3 bg-secondary text-light shadow">
+            {{ form_start(formView) }}
+            {{ form_widget(formView) }}
+            <button type="submit" class="btn btn-danger border-2 border-light mt-3">Update</button>
+            <a href="{{ path('admin_controller') }}" class="btn btn-success border-2 border-light mt-3 mx-3">Retour</a>
+            {{ form_help(formView) }}
+            {{ form_end(formView) }}
+        </div>
+    </div>
 
     {% for billet in billets %}
-        <div class="row">
-            <div class="col-md-2">&ensp;</div>
-            <div class="col-md-8 my-5">
-                <div class="card">
-                    <p class="card-header">{{billet.title}} </p>
+        <div class="container my-4">
+            <div class="">
+                <div class="card shadow">
+                    <p class="card-header"><span class="fw-bold text-primary">ID: </span>{{ billet.id }} | <span class="fw-bold text-primary">Title: </span>{{billet.title}} </p>
                     <pre class="card-body my-5 p-3">{{billet.content}}</pre>
-                    <a href="{{ path('admin_controller') }}" class="btn btn-sm btn-danger">Return</a>
+                    <a href="{{ path('admin_controller') }}" class="btn btn-sm btn-success border-2 border-dark">Return</a>
                 </div>
             </div>
-            <div class="col-md-2"></div>
         </div>
     {% endfor %}
 {% endblock %}
