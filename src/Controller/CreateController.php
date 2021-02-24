@@ -20,7 +20,7 @@ class CreateController extends AbstractController
      * @param EntityManagerInterface $em
      * @return Response
      */
-    public function Create(FormFactoryInterface $factory, Request $request, EntityManagerInterface $em): Response
+    public function Create(Request $request, EntityManagerInterface $em): Response
     {
         $form = $this->createForm(CreateBilletType::class);
 
@@ -28,14 +28,8 @@ class CreateController extends AbstractController
 
         if ($form->isSubmitted()) {
             $data = $form->getData();
-            $billet = new Billet();
-            $billet->setTitle($data->getTitle())
-                ->setContent($data->getContent())
-                ->setDate($data->getDate())
-                ->setAuthors($data->getAuthors())
-                ->setPicture($data->getPicture());
-            #DD($billet);
-            $em->persist($billet);
+
+            $em->persist($data);
         }
         $em->flush();
 
