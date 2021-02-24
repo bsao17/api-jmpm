@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CreateController!{% endblock %}
+{% block title %}Créer un article{% endblock %}
 
 {% block body %}
     <div class="container">
@@ -9,7 +9,7 @@
             {{ form_start(formView) }}
             {{ form_widget(formView) }}
             <button type="submit" class="btn btn-danger my-3 border border-3 border-light">Créer votre article</button>
-            <a href="{{ path('admin_controller') }}" class="btn btn-success border border-3 border-light mx-3">Retour</a>
+            <a href="/admin" class="btn btn-success border border-3 border-light mx-3">Retour</a>
             {{ form_help(formView) }}
             {{ form_end(formView) }}
 
