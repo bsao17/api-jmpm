@@ -17,17 +17,15 @@ class IsUpToDateController extends AbstractController
      * @param BilletRepository $billetRepository
      * @return Response
      */
-    public function index(BilletRepository $billetRepository, Request $request, EntityManagerInterface $em): Response
+    public function index(BilletRepository $billetRepository, Request $request): Response
     {
         $form = $this->createForm(UpdateType::class);
 
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
             $data = $form->getData();
-            DD($data);
-            #$em->persist($data);
+            DUMP($data);
         }
-        $em->flush();
 
         return $this->render('is_up_to_date/index.html.twig', [
             'billets' => $billetRepository->findAll(),
