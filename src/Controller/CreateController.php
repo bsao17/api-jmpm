@@ -17,10 +17,9 @@ class CreateController extends AbstractController
      * @Route("/create", name="admin_create")
      * @param FormFactoryInterface $factory
      * @param Request $request
-     * @param EntityManagerInterface $em
      * @return Response
      */
-    public function Create(FormFactoryInterface $factory, Request $request, EntityManagerInterface $em): Response
+    public function Create(FormFactoryInterface $factory, Request $request): Response
     {
         $builder = $factory->createBuilder(CreateBilletType::class);
 
