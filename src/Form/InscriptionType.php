@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -14,33 +15,17 @@ class InscriptionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username', TextType::class, [
-                'label' => 'Nom d\'utilisateur',
-                'attr' => [
-                    'class'=>'form-controle',
-                    'placeholder'=>'Votre nom d\'utilisateur'
-                ]
-            ])
-            ->add('email', EmailType::class, [
-                'label' => 'email',
-                'attr' => [
-                    'class'=>'form-control',
-                    'placeholder'=>'votre email'
-                ]
-            ])
-            ->add('password', PasswordType::class, [
-                'label' => 'Password',
-                'attr' => [
-                    'class'=>'form-control',
-                    'placeholder'=>'mot de passe'
-                ]
-            ]);
+            ->add('email', EmailType::class, ['attr'=>['placeholder'=>'email']])
+            #->add('roles', TextType::class, ['attr'=>['placeholder'=>'role']])
+            ->add('password', PasswordType::class, ['attr'=>['placeholder'=>'mot de passe']])
+            ->add('username', TextType::class, ['attr'=>['placeholder'=>'nom d\'utilisateur']])
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            // Configure your form options here
+            'data_class' => User::class,
         ]);
     }
 }

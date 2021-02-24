@@ -4,14 +4,14 @@
 
 {% block body %}
     <div class="container">
-    <h1>Créer un compte utilisateur</h1>
-        <div class="form-group">
+    <h2 class="text-center card-header text-light shadow">Créer votre compte</h2>
+        <div class="form-group card p-3 bg-secondary text-light shadow">
             {{ form_start(formView) }}
 
             {{ form_label(formView) }}
 
             {{ form_widget(formView) }}
-            <button type="submit" class="btn btn-success">S'inscrire</button>
+            <button type="submit" class="btn btn-danger border-3 border-light mt-3">S'inscrire</button>
             {{ form_end(formView) }}
         </div>
     </div>
