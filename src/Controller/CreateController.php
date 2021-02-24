@@ -28,18 +28,7 @@ class CreateController extends AbstractController
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()) {
-            $data = $form->getData();
-            $billet = new Billet();
-            $billet->setTitle($data->getTitle())
-                ->setContent($data->getContent())
-                ->setDate($data->getDate())
-                ->setAuthors($data->getAuthors())
-                ->setPicture($data->getPicture());
-            #DD($billet);
-            $em->persist($billet);
-        }
-        $em->flush();
+
 
         return $this->render('create/index.html.twig', [
             'formView' => $form->createView()
