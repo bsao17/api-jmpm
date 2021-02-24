@@ -17,6 +17,7 @@ class DeleteController extends AbstractController
      */
     public function index(BilletRepository $billets): Response
     {
+
         return $this->render('delete/index.html.twig', [
             'billets' => $billets->findAll(),
         ]);
